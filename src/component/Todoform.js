@@ -19,12 +19,15 @@ function Todoform() {
 
 
     function handleSubmit(e)  {
-        
         e.preventDefault();
+        
+        if(todo.text !== ''){
         dispatch(addTODO({
             text: todo.text
          } )) ;
-        todo.text = '';
+        todo.text='';
+        
+        }
         }
     
 
@@ -34,7 +37,7 @@ function Todoform() {
 
         <form name = 'Tit' className='flex justify-center ' onSubmit={ handleSubmit}>
             <input type='text' placeholder='Add Todo' value={todo.text} name='title' className='font-sans text-blue-400 border-blue-300' onChange={handleChange}  />
-            <button className='mx-3 bg-blue-400 text-white my-2 p-2 border-blue-300 hover:bg-green-500 rounded'>Add Todo</button>
+            <button  className='mx-3 bg-blue-400 text-white my-2 p-2 border-blue-300 hover:bg-green-500 rounded'>Add Todo</button>
         </form>
         
         </div>
